@@ -1,0 +1,16 @@
+.footer {
+  background: var(--dark-bg);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
+
+.heart-icon {
+  color: var(--accent-color);
+  display: inline-block;
+  margin: 0 5px;
+}
