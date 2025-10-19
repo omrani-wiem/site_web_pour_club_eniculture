@@ -33,23 +33,23 @@ const Poles = () => {
   const poles = [
     {
       icon: <FaTheaterMasks />,
-      title: 'Théâtre',
+      title: 'Théâtro',
       description: 'Expression scénique, improvisation et mise en scène pour développer votre talent dramatique.',
-      activities: ['Ateliers d\'improvisation', 'Représentations théâtrales', 'Écriture de scénarios'],
+      activities: ['cinéma', 'Représentations théâtrales', 'Podcast', 'Radio'],
       gradient: 1
     },
     {
       icon: <FaPaintBrush />,
-      title: 'Peinture & Bricolage',
+      title: 'Handy\'s',
       description: 'Libérez votre créativité à travers l\'art visuel et les créations manuelles.',
-      activities: ['Peinture sur toile', 'Projets DIY', 'Décoration événementielle'],
+      activities: ['Peinture sur toile', 'art plastique', 'Décoration événementielle' ,'Dessin', 'Calligraphie', 'collage', 'jeux'],
       gradient: 2
     },
     {
       icon: <FaMusic />,
-      title: 'Musique',
+      title: 'Arty\'s',
       description: 'Harmonie et rythme pour créer des moments mémorables et inspirer nos audiences.',
-      activities: ['Concerts et performances', 'Jam sessions', 'Composition musicale'],
+      activities: ['Concerts et performances', 'Dance', 'Composition musicale' , 'Événements'],
       gradient: 3
     }
   ];
