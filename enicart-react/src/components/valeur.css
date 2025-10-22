@@ -1,0 +1,97 @@
+.valeur {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.valeur-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.valeur-grid .pole-card {
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem;
+    background: var(--white);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.valeur-grid .pole-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.valeur-grid .pole-card:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.valeur-grid .pole-card:nth-child(3) {
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.valeur-grid .pole-card:hover {
+    animation-play-state: paused;
+    transform: translateY(-30px) scale(1.05);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.valeur-grid .pole-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1rem;
+}
+
+.valeur-grid h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.valeur-grid p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .valeur-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .valeur-grid .pole-card {
+        width: 250px;
+        height: 250px;
+        padding: 2rem;
+    }
+
+    .valeur-grid .pole-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .valeur-grid h3 {
+        font-size: 1.1rem;
+    }
+
+    .valeur-grid p {
+        font-size: 0.85rem;
+    }
+}

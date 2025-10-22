@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Poles from './components/Poles';
+import Valeurs from './components/valeur';
 import Team from './components/Team';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
@@ -16,6 +17,7 @@ function App() {
       <Hero />
       <About />
       <Poles />
+      <Valeurs />
       <Team />
       <Gallery />
       <Contact />
