@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { send } from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
@@ -9,6 +10,8 @@ const Contact = () => {
     message: ''
   });
 
+  const [status, setStatus] = useState(''); 
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -16,11 +19,24 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Merci pour votre message ! Nous vous contacterons bientôt.');
-    setFormData({ name: '', email: '', message: '' });
+
+     const serviceID = 'service_5obwroq';
+    const templateID = 'template_s8n0ffg';
+    const userID = 'oVq1Un47g5cYH85oM';
+
+    send(serviceID, templateID, formData, userID)
+      .then(() => {
+        setStatus('Message envoyé avec succès !');
+        setFormData({ name: '', email: '', message: '' });
+      })
+      .catch((err) => {
+        setStatus('Erreur lors de l’envoi. Réessayez.');
+        console.error(err);
+      });
   };
+
 
   return (
     <section id="contact" className="contact">
@@ -33,22 +49,20 @@ const Contact = () => {
             <div className="contact-details">
               <div className="contact-item">
                 <FaEnvelope />
-                <span>contact@enicart.tn</span>
+                <span>enicart@gmail.com</span>
               </div>
               <div className="contact-item">
                 <FaMapMarkerAlt />
-                <span>ENIC, Carthage, Tunisie</span>
+                <span> Enichartage, Tunisie</span>
               </div>
               <div className="contact-item">
                 <FaPhone />
-                <span>+216 XX XXX XXX</span>
+                <span>+216 25 456 362</span>
               </div>
             </div>
             <div className="social-links">
               <a href="#"><FaFacebook /></a>
               <a href="#"><FaInstagram /></a>
-              <a href="#"><FaLinkedin /></a>
-              <a href="#"><FaYoutube /></a>
             </div>
           </div>
           <form className="contact-form" onSubmit={handleSubmit}>
@@ -83,6 +97,7 @@ const Contact = () => {
               ></textarea>
             </div>
             <button type="submit" className="btn btn-primary">Envoyer</button>
+             {status && <p className="status-message">{status}</p>}
           </form>
         </div>
       </div>
