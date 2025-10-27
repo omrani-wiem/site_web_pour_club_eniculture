@@ -4,6 +4,7 @@ import './Gallery.css';
 import gal1 from '../images/gallerie1.png';
 import gal2 from '../images/gallerie2.png';
 import gal3 from '../images/gallerie3.png';
+import gal4 from '../images/gallerie4.png';
 const Gallery = () => {
   const galleryRef = useRef([]);
 
@@ -36,7 +37,7 @@ const Gallery = () => {
     { title: 'Événement Théâtre', gradient: 1, image: gal1 },
     { title: 'Atelier Peinture', gradient: 2, image: gal2 },
     { title: 'Concert Musical', gradient: 3, image: gal3 },
-    { title: 'Projet Bricolage', gradient: 1 }
+    { title: 'Projet Bricolage', gradient: 1, image: gal4 }
   ];
 
   return (
