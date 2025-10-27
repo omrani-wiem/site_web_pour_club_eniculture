@@ -32,7 +32,7 @@ const Valeurs  = ()  => {
     const valeurs = [
         {
             icon : <FaLightbulb/>,
-            title : 'Innovation',
+            title : 'creativité',
             description: 'Nous encourageons la créativité et l\'innovation pour trouver des solutions nouvelles et efficaces.',
             gradient: 1
         },

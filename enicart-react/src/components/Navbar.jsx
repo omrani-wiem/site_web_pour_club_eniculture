@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
+  useEffect(() => {//useEffect permet d'executer le code apres que le composant soit monté
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };

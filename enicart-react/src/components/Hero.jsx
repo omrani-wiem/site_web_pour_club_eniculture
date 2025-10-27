@@ -52,12 +52,6 @@ const Hero = () => {
           <div className="floating-shape shape-4"></div>
         </div>
       </div>
-      <div className="scroll-indicator">
-        <div className="mouse">
-          <div className="wheel"></div>
-        </div>
-        <p>Défiler</p>
-      </div>
     </section>
   );
 };

@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { FaImage } from 'react-icons/fa';
 import './Gallery.css';
-
+import gal1 from '../images/gallerie1.png';
+import gal2 from '../images/gallerie2.png';
+import gal3 from '../images/gallerie3.png';
 const Gallery = () => {
   const galleryRef = useRef([]);
 
@@ -31,9 +33,9 @@ const Gallery = () => {
   }, []);
 
   const galleryItems = [
-    { title: 'Événement Théâtre', gradient: 1 },
-    { title: 'Atelier Peinture', gradient: 2 },
-    { title: 'Concert Musical', gradient: 3 },
+    { title: 'Événement Théâtre', gradient: 1, image: gal1 },
+    { title: 'Atelier Peinture', gradient: 2, image: gal2 },
+    { title: 'Concert Musical', gradient: 3, image: gal3 },
     { title: 'Projet Bricolage', gradient: 1 }
   ];
 
@@ -48,10 +50,14 @@ const Gallery = () => {
               className="gallery-item"
               ref={(el) => (galleryRef.current[index] = el)}
             >
-              <div className={`gallery-placeholder gradient-${item.gradient}`}>
-                <FaImage />
-                <p>{item.title}</p>
-              </div>
+              {item.image ? (
+                <img src={item.image} alt={item.title} className="gallery-photo" />
+              ) : (
+                <div className={`gallery-placeholder gradient-${item.gradient}`}>
+                  <FaImage />
+                  <p>{item.title}</p>
+                </div>
+              )}
             </div>
           ))}
         </div>
